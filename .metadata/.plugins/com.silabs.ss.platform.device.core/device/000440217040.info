@@ -1,0 +1,14 @@
+protectFromDetectionUpdates=false
+label=J-Link Silicon Labs (440217040)
+targetPartOverride=mcu.arm.efr32.bg22.bgm220pc22hna
+userLabel=Gateway
+boardOverrides {
+  brd4314a:0.0.0
+}
+EXTENSION:com.silabs.ss.support.dci.internal.part.core.SecurePartSettingExtension {
+}
+EXTENSION:com.silabs.ss.support.mcu.internal.api.part.core.MCUDeviceSettingExtension {
+  tifId:swd
+}
+EXTENSION:com.silabs.ss.support.jlink.internal.api.core.JLinkDeviceSettingsExtension {
+}

@@ -1,0 +1,6 @@
+21:08:26 **** Build of configuration GNU ARM v10.3.1 - Default for project soc_blinky_2 ****
+make -j16 all 
+make: Nothing to be done for 'all'.
+
+21:08:28 Build Finished. 0 errors, 0 warnings. (took 2s.42ms)
+

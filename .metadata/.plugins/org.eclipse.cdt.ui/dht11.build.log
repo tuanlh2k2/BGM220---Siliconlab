@@ -1,0 +1,6 @@
+15:13:46 **** Build of configuration GNU ARM v10.3.1 - Debug for project dht11 ****
+make -j16 all 
+make: Nothing to be done for 'all'.
+
+15:13:47 Build Finished. 0 errors, 0 warnings. (took 599ms)
+

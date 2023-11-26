@@ -1,0 +1,7 @@
+16:17:53 **** Clean-only build of configuration GNU ARM v10.3.1 - Default for project blink_pwm_baremetal ****
+make -j16 clean 
+rm -rf blink_pwm_baremetal.axf
+ 
+
+16:17:55 Build Finished. 0 errors, 0 warnings. (took 1s.619ms)
+

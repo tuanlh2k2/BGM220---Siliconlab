@@ -1,0 +1,71 @@
+19:19:07 **** Build of configuration GNU ARM v10.3.1 - Default for project blink_led_with_button_3 ****
+make -j16 all 
+Building file: C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_event_handler.c
+Building file: C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_iostream_handles.c
+Building file: C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_board_default_init.c
+Building file: C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_device_init_clocks.c
+Building file: C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_iostream_init_usart_instances.c
+Building file: C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_simple_led_instances.c
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m33 -mthumb -std=c99 -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv5-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"autogen/sl_board_default_init.d" -MT"autogen/sl_board_default_init.o" -o "autogen/sl_board_default_init.o" "C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_board_default_init.c"
+Invoking: GNU ARM C Compiler
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m33 -mthumb -std=c99 -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv5-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"autogen/sl_simple_led_instances.d" -MT"autogen/sl_simple_led_instances.o" -o "autogen/sl_simple_led_instances.o" "C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_simple_led_instances.c"
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m33 -mthumb -std=c99 -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv5-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"autogen/sl_device_init_clocks.d" -MT"autogen/sl_device_init_clocks.o" -o "autogen/sl_device_init_clocks.o" "C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_device_init_clocks.c"
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m33 -mthumb -std=c99 -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv5-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"autogen/sl_event_handler.d" -MT"autogen/sl_event_handler.o" -o "autogen/sl_event_handler.o" "C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_event_handler.c"
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m33 -mthumb -std=c99 -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv5-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"autogen/sl_iostream_handles.d" -MT"autogen/sl_iostream_handles.o" -o "autogen/sl_iostream_handles.o" "C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_iostream_handles.c"
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m33 -mthumb -std=c99 -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv5-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"autogen/sl_iostream_init_usart_instances.d" -MT"autogen/sl_iostream_init_usart_instances.o" -o "autogen/sl_iostream_init_usart_instances.o" "C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_iostream_init_usart_instances.c"
+Building file: C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/app.c
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m33 -mthumb -std=c99 -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv5-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"app.d" -MT"app.o" -o "app.o" "C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/app.c"
+Building file: C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/main.c
+Invoking: GNU ARM C Compiler
+C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_board_default_init.c:30:10: fatal error: sl_board_control.h: No such file or directory
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m33 -mthumb -std=c99 -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv5-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/main.c"
+   30 | #include "sl_board_control.h"
+      |          ^~~~~~~~~~~~~~~~~~~~
+C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_device_init_clocks.c:30:10: fatal error: sl_device_init_clocks.h: No such file or directory
+   30 | #include "sl_device_init_clocks.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_simple_led_instances.c:18:10: fatal error: sl_simple_led.h: No such file or directory
+   18 | #include "sl_simple_led.h"
+      |          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+compilation terminated.
+compilation terminated.
+C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_event_handler.c:3:10: fatal error: em_chip.h: No such file or directory
+    3 | #include "em_chip.h"
+      |          ^~~~~~~~~~~
+compilation terminated.
+C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_iostream_handles.c:1:10: fatal error: sl_iostream.h: No such file or directory
+    1 | #include "sl_iostream.h"
+      |          ^~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [autogen/subdir.mk:49: autogen/sl_event_handler.o] Error 1
+C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/autogen/sl_iostream_init_usart_instances.c:7:10: fatal error: em_device.h: No such file or directory
+    7 | #include "em_device.h"
+      |          ^~~~~~~~~~~~~
+make: *** Waiting for unfinished jobs....
+make: *** [autogen/subdir.mk:70: autogen/sl_simple_led_instances.o] Error 1
+compilation terminated.
+make: *** [autogen/subdir.mk:42: autogen/sl_device_init_clocks.o] Error 1
+make: *** [autogen/subdir.mk:35: autogen/sl_board_default_init.o] Error 1
+C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/app.c:21:10: fatal error: em_gpio.h: No such file or directory
+   21 | #include "em_gpio.h"
+      |          ^~~~~~~~~~~
+make: *** [autogen/subdir.mk:56: autogen/sl_iostream_handles.o] Error 1
+compilation terminated.
+make: *** [autogen/subdir.mk:63: autogen/sl_iostream_init_usart_instances.o] Error 1
+make: *** [subdir.mk:23: app.o] Error 1
+C:/Users/Wind/OneDrive/Desktop/blink_led_with_button/main.c:17:10: fatal error: sl_component_catalog.h: No such file or directory
+   17 | #include "sl_component_catalog.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [subdir.mk:30: main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+19:19:08 Build Failed. 17 errors, 0 warnings. (took 547ms)
+

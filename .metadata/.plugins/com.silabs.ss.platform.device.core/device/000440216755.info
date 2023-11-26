@@ -1,0 +1,7 @@
+protectFromDetectionUpdates=false
+label=J-Link Silicon Labs (440216755)
+userLabel=Device_2
+boardOverrides {
+}
+EXTENSION:com.silabs.ss.support.dci.internal.part.core.SecurePartSettingExtension {
+}

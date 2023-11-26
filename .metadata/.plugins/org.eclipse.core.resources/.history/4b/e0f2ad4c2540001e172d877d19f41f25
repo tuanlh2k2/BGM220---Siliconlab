@@ -1,0 +1,30 @@
+/*
+ * app_cli.h
+ *
+ *  Created on: Aug 21, 2023
+ *      Author: Wind
+ */
+
+#ifndef APP_CLI_H_
+#define APP_CLI_H_
+
+
+
+#endif /* APP_CLI_H_ */
+
+#include <stdint.h>
+#include "sl_component_catalog.h"
+#include "em_chip.h"
+#include "sl_cli.h"
+
+#if defined(SL_CATALOG_KERNEL_PRESENT)
+#include "app_task_init.h"
+#endif
+#include "sl_cli_handles.h"
+
+/******************************************************************************
+ * CLI - run: Handler of the `custom run` command
+ *****************************************************************************/
+void cmd_run_handler(sl_cli_command_arg_t *arguments);
+
+void cli_custom_cmd_init();

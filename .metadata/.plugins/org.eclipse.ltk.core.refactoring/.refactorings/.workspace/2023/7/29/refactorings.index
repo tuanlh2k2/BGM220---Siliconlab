@@ -1,0 +1,7 @@
+1689748279670	Delete resource 'divive_1/dht22lib.h'
+1689748292419	Delete resource 'divive_1/dht22lib.c'
+1689755763342	Delete resource 'soc_blinky_test_gpio'
+1689844650365	Rename resource 'empty_2'
+1689844664885	Delete resource 'bluetooth_container_level_detection_client'
+1689844681155	Delete resource 'blink_pwm_baremetal'
+1689844688238	Delete resource 'blink_baremetal'

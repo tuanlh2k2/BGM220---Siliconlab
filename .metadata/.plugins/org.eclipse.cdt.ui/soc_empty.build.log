@@ -1,0 +1,6 @@
+21:08:47 **** Build of configuration GNU ARM v10.3.1 - Default for project soc_empty ****
+make -j16 all 
+make: Nothing to be done for 'all'.
+
+21:08:50 Build Finished. 0 errors, 0 warnings. (took 2s.798ms)
+

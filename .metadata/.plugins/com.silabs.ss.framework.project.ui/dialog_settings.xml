@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="com.silabs.ss.framework.ide.project.core.cdtMbsProjectType">
+		<item key="importOption" value="LINK"/>
+		<list key="fileLocationHistory">
+			<item value="C:\Users\Wind\Downloads"/>
+			<item value="C:\Users\Wind\OneDrive\Desktop\Divice"/>
+			<item value="C:\Users\Wind\OneDrive\Desktop\blink_led_with_button"/>
+			<item value="C:\Users\Wind\OneDrive\Desktop\empty_mock"/>
+			<item value="C:\Users\Wind\OneDrive\Desktop\test\empty_mock"/>
+		</list>
+		<list key="fileLocations">
+			<item value="C:\Users\Wind\Downloads"/>
+		</list>
+	</section>
+</section>

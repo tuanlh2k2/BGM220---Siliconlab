@@ -1,0 +1,6 @@
+21:10:26 **** Build of configuration GNU ARM v10.3.1 - Default for project soc_thermometer_client ****
+make -j16 all 
+make: Nothing to be done for 'all'.
+
+21:10:29 Build Finished. 0 errors, 0 warnings. (took 3s.197ms)
+

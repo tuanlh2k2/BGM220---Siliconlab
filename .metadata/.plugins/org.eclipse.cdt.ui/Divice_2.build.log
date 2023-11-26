@@ -1,0 +1,6 @@
+21:07:39 **** Build of configuration GNU ARM v10.3.1 - Default for project Divice_2 ****
+make -j16 all 
+make: Nothing to be done for 'all'.
+
+21:07:41 Build Finished. 0 errors, 0 warnings. (took 2s.118ms)
+

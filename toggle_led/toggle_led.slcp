@@ -1,0 +1,35 @@
+# Silicon Labs Project Configuration Tools: slcp, v0, Component selection file.
+project_name: toggle_led
+label: toggle_led
+description: |
+  This example project shows an empty configuration that can be used as a starting point to add components and functionality.
+category: Example|Platform
+package: platform
+quality: production
+source:
+- {path: app.c}
+- {path: main.c}
+include:
+- path: ''
+  file_list:
+  - {path: app.h}
+sdk: {id: gecko_sdk, version: 3.2.3}
+toolchain_settings: []
+component:
+- {id: BGM220PC22HNA}
+- {id: app_log}
+- {id: sl_system}
+- instance: [btn0]
+  id: simple_button
+- instance: [vcom]
+  id: iostream_usart
+- instance: [mikroe]
+  id: i2cspm
+- {id: device_init}
+- {id: sleeptimer}
+- {id: brd4314a}
+- {id: udelay}
+define:
+- {name: DEBUG_EFM}
+ui_hints: {}
+

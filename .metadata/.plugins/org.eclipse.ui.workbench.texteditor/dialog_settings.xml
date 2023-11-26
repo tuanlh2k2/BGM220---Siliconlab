@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="TEMPERATURE_MIN"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="TEMPERATURE_MIN"/>
+			<item value="threshold_of_sensor"/>
+			<item value="date"/>
+			<item value="discover_sensor_characteristics"/>
+			<item value="init"/>
+			<item value="sl_sleeptimer_date_t"/>
+			<item value="time_date"/>
+			<item value="read_and_cache_bluetooth_address"/>
+			<item value="draw_string"/>
+			<item value="sl_simple_timer_start"/>
+			<item value="MAX_SIZE_BUFFER"/>
+			<item value="status_of_device"/>
+			<item value="queue"/>
+			<item value="sl_cli_command_info_t"/>
+			<item value="custom_cmd_test"/>
+		</list>
+		<list key="replacehistory">
+			<item value="MAX_SIZE_RING_BUFFER"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1371"/>
+		<item key="DIALOG_Y_ORIGIN" value="42"/>
+		<item key="DIALOG_WIDTH" value="555"/>
+		<item key="DIALOG_HEIGHT" value="997"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

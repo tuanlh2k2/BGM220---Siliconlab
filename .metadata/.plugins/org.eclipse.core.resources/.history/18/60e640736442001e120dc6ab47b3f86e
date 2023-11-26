@@ -1,0 +1,132 @@
+/***************************************************************************//**
+ * @file
+ * @brief Application interface provided to main().
+ *******************************************************************************
+ * # License
+ * <b>Copyright 2020 Silicon Laboratories Inc. www.silabs.com</b>
+ *******************************************************************************
+ *
+ * SPDX-License-Identifier: Zlib
+ *
+ * The licensor of this software is Silicon Laboratories Inc.
+ *
+ * This software is provided 'as-is', without any express or implied
+ * warranty. In no event will the authors be held liable for any damages
+ * arising from the use of this software.
+ *
+ * Permission is granted to anyone to use this software for any purpose,
+ * including commercial applications, and to alter it and redistribute it
+ * freely, subject to the following restrictions:
+ *
+ * 1. The origin of this software must not be misrepresented; you must not
+ *    claim that you wrote the original software. If you use this software
+ *    in a product, an acknowledgment in the product documentation would be
+ *    appreciated but is not required.
+ * 2. Altered source versions must be plainly marked as such, and must not be
+ *    misrepresented as being the original software.
+ * 3. This notice may not be removed or altered from any source distribution.
+ *
+ ******************************************************************************/
+
+#ifndef APP_H
+#define APP_H
+
+/**************************************************************************//**
+ * include.
+ *****************************************************************************/
+#include "stdint.h"
+#include "app_cli.h"
+#include "em_common.h"
+#include "app_assert.h"
+#include "sl_bluetooth.h"
+#include "gatt_db.h"
+#include "sl_simple_button_instances.h"
+#include "app_log.h"
+#include "math.h"
+#include "st7735.h"
+#include "threshold_alert.h"
+
+/**************************************************************************//**
+ * Define.
+ *****************************************************************************/
+// connection parameters
+#define CONN_INTERVAL_MIN             80   //100ms
+#define CONN_INTERVAL_MAX             80   //100ms
+#define CONN_RESPONDER_LATENCY        0    //no latency
+#define CONN_TIMEOUT                  100  //1000ms
+#define CONN_MIN_CE_LENGTH            0
+#define CONN_MAX_CE_LENGTH            0xffff
+
+#define SCAN_INTERVAL                 16   //10ms
+#define SCAN_WINDOW                   16   //10ms
+#define SCAN_PASSIVE                  0
+
+#define TEMP_INVALID                  NAN
+#define HUMI_INVALID                  NAN
+#define CONNECTION_HANDLE_INVALID     ((uint8_t)0xFFu)
+#define SERVICE_HANDLE_INVALID        ((uint32_t)0xFFFFFFFFu)
+#define CHARACTERISTIC_HANDLE_INVALID ((uint16_t)0xFFFFu)
+#define TABLE_INDEX_INVALID           ((uint8_t)0xFFu)
+#define PRINT_TX_POWER_DEFAULT        (false)
+
+
+/**************************************************************************//**
+ * self-defined variable.
+ *****************************************************************************/
+typedef enum {
+	scanning,
+	opening,
+	discover_services,
+	discover_button_characteristics,
+	discover_sensor_characteristics,
+	discover_device_control_characteristics,
+	checking_max_device,
+	running
+} conn_state_t;
+
+typedef struct {
+	uint8_t  connection_handle;
+	uint8_t  connection_char;
+	uint16_t server_address;
+	uint32_t my_service_handle;  // my service.
+	uint16_t button_characteristic_handle; // button characteristic.
+	uint16_t sensor_characteristic_handle;  // sensor characteristic.
+	uint16_t device_control_characteristic_handle; // device control characteristic.
+	uint8_t  integer_humi_value;
+	uint8_t  decimal_humi_value;
+	uint8_t  integer_temp_value;
+	uint8_t  decimal_temp_value;
+	uint8_t light_value_hight;
+	uint8_t light_value_low;
+
+	// threshold of device.
+	uint8_t threshold_of_temp;
+	uint8_t threshold_of_humi;
+	uint8_t threshold_of_light;
+
+	// state of device.
+	uint8_t state_of_device;
+	uint8_t enable_indicate;
+} conn_properties_t;
+
+
+// device status.
+typedef enum {
+	PAUSE, // trạng thái chờ nhận dữ liệu.
+	CONNECT,     // trạng thái nhận dữ liệu.
+	DISCONNECT   // trạng thái khi không có thiết bị kết nối.
+}status_device;
+
+/**************************************************************************//**
+ * Application Init.
+ *****************************************************************************/
+void app_init(void);
+
+/**************************************************************************//**
+ * Application Process Action.
+ *****************************************************************************/
+void app_process_action(void);
+
+// print screen.
+void display_screen(uint8_t x, uint8_t y, uint8_t index_device);
+#endif // APP_H

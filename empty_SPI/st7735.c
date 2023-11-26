@@ -1,0 +1,279 @@
+#include <st7735.h>
+#include <st7735_spi.h>
+#include <string.h>
+
+const uint8_t A[] = {
+		0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,  // space.
+		////////////////////////////////////////////////// + 1
+		0x70, 0x88, 0x98, 0xa8, 0xc8, 0x88, 0x70, 0x00,  // 0
+		0x20, 0x60, 0x20, 0x20, 0x20, 0x20, 0x70, 0x00,  // 1
+		0x70, 0x88, 0x08, 0x70, 0x80, 0x80, 0xf8, 0x00,  // 2
+		0xf8, 0x08, 0x10, 0x30, 0x08, 0x88, 0x70, 0x00,  // 3
+		0x10, 0x30, 0x50, 0x90, 0xf8, 0x10, 0x10, 0x00,  // 4
+		0xf8, 0x80, 0xf0, 0x08, 0x08, 0x88, 0x70, 0x00,  // 5
+		0x38, 0x40, 0x80, 0xf0, 0x88, 0x88, 0x70, 0x00,  // 6
+		0xf8, 0x08, 0x08, 0x10, 0x20, 0x40, 0x80, 0x00,  // 7
+		0x70, 0x88, 0x88, 0x70, 0x88, 0x88, 0x70, 0x00,  // 8
+		0x70, 0x88, 0x88, 0x78, 0x08, 0x10, 0xe0, 0x00,  // 9
+		/////////////////////////////////////////////////// + 11
+		0x20, 0x50, 0x88, 0x88, 0xf8, 0x88, 0x88, 0x00,   //A
+		0xf0, 0x88, 0x88, 0xf0, 0x88, 0x88, 0xf0, 0x00,  // B
+		0x70, 0x88, 0x80, 0x80, 0x80, 0x88, 0x70, 0x00,  // C
+		0xf0, 0x88, 0x88, 0x88, 0x88, 0x88, 0xf0, 0x00,  // D
+		0xf8, 0x80, 0x80, 0xf0, 0x80, 0x80, 0xf8, 0x00,  // E
+		0xf8, 0x80, 0x80, 0xf0, 0x80, 0x80, 0x80, 0x00,  // F
+		0x78, 0x88, 0x80, 0x80, 0x98, 0x88, 0x78, 0x00,  // G
+		0x88, 0x88, 0x88, 0xf8, 0x88, 0x88, 0x88, 0x00,  // H
+		0x70, 0x20, 0x20, 0x20, 0x20, 0x20, 0x70, 0x00,  // I
+		0x38, 0x10, 0x10, 0x10, 0x10, 0x90, 0x60, 0x00,  // J
+		0x88, 0x90, 0xa0, 0xc0, 0xa0, 0x90, 0x88, 0x00,  // K
+		0x80, 0x80, 0x80, 0x80, 0x80, 0x80, 0xf8, 0x00,  // L
+		0x88, 0xd8, 0xa8, 0xa8, 0xa8, 0x88, 0x88, 0x00,  // M
+		0x88, 0x88, 0xc8, 0xa8, 0x98, 0x88, 0x88, 0x00,  // N
+		0x70, 0x88, 0x88, 0x88, 0x88, 0x88, 0x70, 0x00,  // O
+		0xf0, 0x88, 0x88, 0xf0, 0x80, 0x80, 0x80, 0x00,  // P
+		0x70, 0x88, 0x88, 0x88, 0xa8, 0x90, 0x68, 0x00,  // Q
+		0xf0, 0x88, 0x88, 0xf0, 0xa0, 0x90, 0x88, 0x00,  // R
+		0x70, 0x88, 0x80, 0x70, 0x08, 0x88, 0x70, 0x00,  // S
+		0xf8, 0xa8, 0x20, 0x20, 0x20, 0x20, 0x20, 0x00,  // T
+		0x88, 0x88, 0x88, 0x88, 0x88, 0x88, 0x70, 0x00,  // U
+		0x88, 0x88, 0x88, 0x88, 0x88, 0x50, 0x20, 0x00,  // V
+		0x88, 0x88, 0x88, 0xa8, 0xa8, 0xa8, 0x50, 0x00,  // W
+		0x88, 0x88, 0x50, 0x20, 0x50, 0x88, 0x88, 0x00,  // X
+		0x88, 0x88, 0x50, 0x20, 0x20, 0x20, 0x20, 0x00,  // Y
+		0xf8, 0x08, 0x10, 0x70, 0x40, 0x80, 0xf8, 0x00,  // Z
+		// Ky tu dac biet				 + 	37
+		0xC0, 0xDC, 0x22, 0x20, 0x20, 0x22, 0x1C, 0x00, // *C.
+		0xC2, 0xC4, 0x08, 0x10, 0x20, 0x46, 0x86, 0x00,  // %
+		0x00, 0x30, 0x30, 0x00, 0x30, 0x30, 0x00, 0x00,  // :
+
+};
+
+void st7735_set_window(uint8_t x, uint8_t y, uint8_t w, uint8_t h)
+{
+	st7735_send_command(0x2A);
+	st7735_send_data(0x00, 1);
+	st7735_send_data(x + 0, 1);
+	st7735_send_data(0x00, 1);
+	st7735_send_data((x + w), 1);
+
+	st7735_send_command(0x2B);
+	st7735_send_data(0x00, 1);
+	st7735_send_data(y + 0, 1);
+	st7735_send_data(0x00, 1);
+	st7735_send_data((y + h) + 0, 1);
+
+	st7735_send_command(0x2C);
+}
+
+void st7735_clear(void)
+{
+	st7735_set_window(0, 0, 160, 128);
+	for(unsigned int i = 0; i < (160 * (128)); i++)
+	{
+		st7735_send_data(0, 1);
+		st7735_send_data(0, 1);
+	}
+}
+
+void st7735_draw_z(uint16_t color)
+{
+	st7735_send_data(color>>8, 1);
+	st7735_send_data(color, 1);
+}
+void st7735_draw_pixel(int16_t x,int16_t y,uint16_t color)
+{
+	//if(x<0)return;
+	//if(y<0)return;
+	//if(x>=DEVICER_MAX_W) return;
+	//if(y>=DEVICER_MAX_H) return;
+	st7735_set_window(x,y,1,1);
+	st7735_draw_z(color);
+}
+
+sl_status_t st7735_init(void)
+{
+	sl_status_t sc;
+
+	st7735_spi_init();
+	//sc = ssd1306_send_command(ptr, sizeof(cmd_buff));
+	st7735_send_command(0x01); //Software Reset
+	sl_sleeptimer_delay_millisecond(5);
+	st7735_send_command(0x11); //exit  Sleep
+	sl_sleeptimer_delay_millisecond(5);
+
+
+	st7735_send_command(0xB1);  //Frame Rate Control (In normal mode/ Full colors)
+	st7735_send_data(0x01, 1);
+	st7735_send_data(0x2C, 1);
+	st7735_send_data(0x2D, 1);
+
+
+	st7735_send_command(0xB2);  //Frame Rate Control (In Idle mode/ 8-colors)
+	st7735_send_data(0x01, 1);
+	st7735_send_data(0x2C, 1);
+	st7735_send_data(0x2D, 1);
+
+
+	st7735_send_command(0xB3);  //Frame Rate Control (In Partial mode/ full colors)
+	st7735_send_data(0x01, 1);
+	st7735_send_data(0x2C, 1);
+	st7735_send_data(0x2D, 1);
+	st7735_send_data(0x01, 1);
+	st7735_send_data(0x2C, 1);
+	st7735_send_data(0x2D, 1);
+
+
+	st7735_send_command(0xB4);  //Display Inversion Control
+	st7735_send_data(0x07, 1);
+
+
+	st7735_send_command(0xC0);  //Power Control 1
+	st7735_send_data(0xA2, 1);
+	st7735_send_data(0x02, 1);
+	st7735_send_data(0x84, 1);
+
+
+	st7735_send_command(0xC1); //Power Control 2
+	st7735_send_data(0xC5, 1);
+
+
+	st7735_send_command(0xC2);  //Power Control 3 (in Normal mode/ Full colors)
+	st7735_send_data(0x0A, 1);
+	st7735_send_data(0x00, 1);
+
+
+	st7735_send_command(0xC3);  //Power Control 4 (in Idle mode/ 8-colors)
+	st7735_send_data(0x8A, 1);
+	st7735_send_data(0x2A, 1);
+
+
+	st7735_send_command(0xC4);  //Power Control 5 (in Partial mode/ full-colors)
+	st7735_send_data(0x8A, 1);
+	st7735_send_data(0xEE, 1);
+
+
+	st7735_send_command(0xC5);  //VCOM Control 1
+	st7735_send_data(0x0E, 1);
+
+
+	st7735_send_command(0x20);  //Display Inversion Off
+
+
+	st7735_send_command(0x36);  //Memory Data Access Control
+	st7735_send_data(0xA0, 1); //RGB mode + che do man hinh ngang
+
+
+	st7735_send_command(0x3A); //Interface Pixel Format
+	st7735_send_data(0x05, 1); //16-bit/pixel
+
+
+	st7735_send_command(0x2A); //Column address set
+	st7735_send_data(0x00, 1);
+	st7735_send_data(0x00, 1);
+	st7735_send_data(0x00, 1);
+	st7735_send_data(160, 1);
+
+
+	st7735_send_command(0x2B); //Row address set
+	st7735_send_data(0x00, 1);
+	st7735_send_data(0x00, 1);
+	st7735_send_data(0x00, 1);
+	st7735_send_data(128, 1);
+
+
+	st7735_send_command(0xE0); //Gamm adjustment (+ polarity)
+	st7735_send_data(0x02, 1);
+	st7735_send_data(0x1C, 1);
+	st7735_send_data(0x07, 1);
+	st7735_send_data(0x12, 1);
+	st7735_send_data(0x37, 1);
+	st7735_send_data(0x32, 1);
+	st7735_send_data(0x29, 1);
+	st7735_send_data(0x2D, 1);
+	st7735_send_data(0x29, 1);
+	st7735_send_data(0x25, 1);
+	st7735_send_data(0x2B, 1);
+	st7735_send_data(0x39, 1);
+	st7735_send_data(0x00, 1);
+	st7735_send_data(0x01, 1);
+	st7735_send_data(0x03, 1);
+	st7735_send_data(0x10, 1);
+
+
+	st7735_send_command(0xE1);  //Gamma adjustment(- polarity)
+	st7735_send_data(0x03, 1);
+	st7735_send_data(0x1D, 1);
+	st7735_send_data(0x07, 1);
+	st7735_send_data(0x06, 1);
+	st7735_send_data(0x2E, 1);
+	st7735_send_data(0x2C, 1);
+	st7735_send_data(0x29, 1);
+	st7735_send_data(0x2D, 1);
+	st7735_send_data(0x2E, 1);
+	st7735_send_data(0x2E, 1);
+	st7735_send_data(0x37, 1);
+	st7735_send_data(0x3F, 1);
+	st7735_send_data(0x00, 1);
+	st7735_send_data(0x00, 1);
+	st7735_send_data(0x02, 1);
+	st7735_send_data(0x10, 1);
+
+	st7735_send_command(0x13); //Partial off (Normal)
+
+	sc = st7735_send_command(0x29); //Display on
+	st7735_clear();
+
+	return sc;
+}
+
+void draw_character(int coordinate_x, int coordinate_y, char data, uint16_t color)
+{
+	// find code data.
+	uint8_t offset = 0;
+	if (data >= 'A') {
+		offset = (data) - 'A' + 11;
+	} else if(data >= '0' && data <= '9'){
+		offset = (data) - '0' + 1;
+	} else if (data == ' ') {
+		offset = 0;
+	} else if (data == '%') {
+		offset = 38;
+	} else if (data == '?') {
+		offset = 37;
+	} else if (data == ':') {
+		offset = 39;
+	}
+
+	// draw.
+	for (int i = 0; i < 8; i++) {
+		uint16_t pixelData = A[i + offset * 8];
+		// Duyệt qua từng cột pixel trong font chữ 6x8
+		for (int j = 0; j < 8; j++) {
+			// Kiểm tra nếu bit tại vị trí j của pixelData bằng 1 (pixel bật)
+			if ((pixelData >> (7 - j)) & 0x01) {
+				// Vẽ pixel bật tại tọa độ (x + j, y + i) với màu của bạn (ví dụ: 0xFFFF - màu trắng)
+				st7735_draw_pixel(coordinate_x + j, coordinate_y + i, color);
+			}
+			// Nếu bit tại vị trí j của pixelData bằng 0 (pixel tắt)
+			else {
+				// Vẽ pixel tắt tại tọa độ (x + j, y + i) với màu của bạn (ví dụ: 0x0000 - màu đen)
+				st7735_draw_pixel(coordinate_x + j, coordinate_y + i, 0x0000);
+			}
+		}
+	}
+}
+
+void draw_string(int coordinate_x, int coordinate_y, const char* str, uint16_t color)
+{
+	uint8_t x = coordinate_x;
+	while (*str) {
+		draw_character(x, coordinate_y, *str, color);
+
+		/* Adjust x and y coordinate */
+		x += 8;
+
+		// Next char
+		str++;
+	}
+}

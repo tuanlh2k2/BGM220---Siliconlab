@@ -1,0 +1,7 @@
+17:18:37 **** Clean-only build of configuration GNU ARM v10.3.1 - Default for project empty_mock_3 ****
+make -j16 clean 
+make: *** No rule to make target 'clean'.  Stop.
+"make -j16 clean" terminated with exit code 2. Build might be incomplete.
+
+17:18:38 Build Failed. 1 errors, 0 warnings. (took 254ms)
+

@@ -1,0 +1,74 @@
+15:13:42 **** Build of configuration GNU ARM v10.3.1 - Debug for project LED_Timer_Blink ****
+make -j16 all 
+Building file: C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g -gdwarf-2 -mcpu=cortex-m33 -mthumb -std=c99 '-DDEBUG=1' '-DDEBUG_EFM=1' '-DBGM220PC22HNA=1' '-DSL_COMPONENT_CATALOG_PRESENT=1' -I"C:\Users\Wind\OneDrive\Desktop\test\LED_Timer_Blink\config" -I"C:\Users\Wind\OneDrive\Desktop\test\LED_Timer_Blink\autogen" -I"C:\Users\Wind\OneDrive\Desktop\test\LED_Timer_Blink" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/Device/SiliconLabs/BGM22/Include" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//app/common/util/app_log" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/common/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//hardware/board/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/CMSIS/Include" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/service/device_init/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/middleware/glib/dmd" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/middleware/glib" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/emlib/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/middleware/glib/glib" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/service/iostream/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//hardware/driver/memlcd/src/ls013b7dh06" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//hardware/driver/memlcd/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//hardware/driver/memlcd/inc/memlcd_usart" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/common/toolchain/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/service/system/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/service/sleeptimer/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/service/udelay/inc" -Os -Wall -Wextra -mno-sched-prolog -fno-builtin -ffunction-sections -fdata-sections -imacrossl_gcc_preinclude.h -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c -fmessage-length=0 -MMD -MP -MF"gecko_sdk_3.2.3/hardware/driver/memlcd/src/sl_memlcd.d" -MT"gecko_sdk_3.2.3/hardware/driver/memlcd/src/sl_memlcd.o" -o "gecko_sdk_3.2.3/hardware/driver/memlcd/src/sl_memlcd.o" "C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c"
+In file included from c:\siliconlabs\simplicitystudio\v5\developer\sdks\gecko_sdk_suite\v3.2\hardware\driver\memlcd\inc\sl_memlcd.h:30,
+                 from C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:17:
+C:\Users\Wind\OneDrive\Desktop\test\LED_Timer_Blink\config/sl_memlcd_usart_config.h:7:2: warning: #warning "Memory LCD SPI peripheral not configured" [-Wcpp]
+    7 | #warning "Memory LCD SPI peripheral not configured"
+      |  ^~~~~~~
+C:\Users\Wind\OneDrive\Desktop\test\LED_Timer_Blink\config/sl_memlcd_usart_config.h:21:2: warning: #warning "Memory LCD SPI CS pin not configured" [-Wcpp]
+   21 | #warning "Memory LCD SPI CS pin not configured"
+      |  ^~~~~~~
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:76:16: error: 'SL_MEMLCD_SPI_PERIPHERAL' undeclared here (not in a function)
+   76 |   .usart     = SL_MEMLCD_SPI_PERIPHERAL,
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:37:42: error: 'cmuClock_USARTSL_MEMLCD_SPI_PERIPHERAL_NO' undeclared here (not in a function)
+   37 | #define SL_MEMLCD_SPI_CLOCK(N) SL_CONCAT(cmuClock_USART, N)
+      |                                          ^~~~~~~~~~~~~~
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:33:25: note: in definition of macro 'SL_CONCAT'
+   33 | #define SL_CONCAT(A, B) A ## B
+      |                         ^
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:77:16: note: in expansion of macro 'SL_MEMLCD_SPI_CLOCK'
+   77 |   .clock     = SL_MEMLCD_SPI_CLOCK(SL_MEMLCD_SPI_PERIPHERAL_NO),
+      |                ^~~~~~~~~~~~~~~~~~~
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:78:16: error: 'SL_MEMLCD_SPI_TX_PORT' undeclared here (not in a function); did you mean 'SL_MEMLCD_SPI_CLOCK'?
+   78 |   .mosi_port = SL_MEMLCD_SPI_TX_PORT,
+      |                ^~~~~~~~~~~~~~~~~~~~~
+      |                SL_MEMLCD_SPI_CLOCK
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:79:16: error: 'SL_MEMLCD_SPI_TX_PIN' undeclared here (not in a function); did you mean 'SL_MEMLCD_SPI_H'?
+   79 |   .mosi_pin  = SL_MEMLCD_SPI_TX_PIN,
+      |                ^~~~~~~~~~~~~~~~~~~~
+      |                SL_MEMLCD_SPI_H
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:82:16: error: 'SL_MEMLCD_SPI_CLK_PORT' undeclared here (not in a function); did you mean 'SL_MEMLCD_SPI_CLOCK'?
+   82 |   .clk_port  = SL_MEMLCD_SPI_CLK_PORT,
+      |                ^~~~~~~~~~~~~~~~~~~~~~
+      |                SL_MEMLCD_SPI_CLOCK
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:83:16: error: 'SL_MEMLCD_SPI_CLK_PIN' undeclared here (not in a function); did you mean 'SL_MEMLCD_SPI_CLOCK'?
+   83 |   .clk_pin   = SL_MEMLCD_SPI_CLK_PIN,
+      |                ^~~~~~~~~~~~~~~~~~~~~
+      |                SL_MEMLCD_SPI_CLOCK
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c: In function 'sl_memlcd_configure':
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:120:19: error: 'SL_MEMLCD_SPI_CS_PORT' undeclared (first use in this function); did you mean 'SL_MEMLCD_SPI_CLOCK'?
+  120 |   GPIO_PinModeSet(SL_MEMLCD_SPI_CS_PORT, SL_MEMLCD_SPI_CS_PIN, gpioModePushPull, 0);
+      |                   ^~~~~~~~~~~~~~~~~~~~~
+      |                   SL_MEMLCD_SPI_CLOCK
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:120:19: note: each undeclared identifier is reported only once for each function it appears in
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:120:42: error: 'SL_MEMLCD_SPI_CS_PIN' undeclared (first use in this function); did you mean 'SL_MEMLCD_SPI_CLOCK'?
+  120 |   GPIO_PinModeSet(SL_MEMLCD_SPI_CS_PORT, SL_MEMLCD_SPI_CS_PIN, gpioModePushPull, 0);
+      |                                          ^~~~~~~~~~~~~~~~~~~~
+      |                                          SL_MEMLCD_SPI_CLOCK
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c: In function 'sl_memlcd_clear':
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:177:18: error: 'SL_MEMLCD_SPI_CS_PORT' undeclared (first use in this function); did you mean 'SL_MEMLCD_SPI_CLOCK'?
+  177 |   GPIO_PinOutSet(SL_MEMLCD_SPI_CS_PORT, SL_MEMLCD_SPI_CS_PIN);
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+      |                  SL_MEMLCD_SPI_CLOCK
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:177:41: error: 'SL_MEMLCD_SPI_CS_PIN' undeclared (first use in this function); did you mean 'SL_MEMLCD_SPI_CLOCK'?
+  177 |   GPIO_PinOutSet(SL_MEMLCD_SPI_CS_PORT, SL_MEMLCD_SPI_CS_PIN);
+      |                                         ^~~~~~~~~~~~~~~~~~~~
+      |                                         SL_MEMLCD_SPI_CLOCK
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c: In function 'sl_memlcd_draw':
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:210:18: error: 'SL_MEMLCD_SPI_CS_PORT' undeclared (first use in this function); did you mean 'SL_MEMLCD_SPI_CLOCK'?
+  210 |   GPIO_PinOutSet(SL_MEMLCD_SPI_CS_PORT, SL_MEMLCD_SPI_CS_PIN);
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+      |                  SL_MEMLCD_SPI_CLOCK
+C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/hardware/driver/memlcd/src/sl_memlcd.c:210:41: error: 'SL_MEMLCD_SPI_CS_PIN' undeclared (first use in this function); did you mean 'SL_MEMLCD_SPI_CLOCK'?
+  210 |   GPIO_PinOutSet(SL_MEMLCD_SPI_CS_PORT, SL_MEMLCD_SPI_CS_PIN);
+      |                                         ^~~~~~~~~~~~~~~~~~~~
+      |                                         SL_MEMLCD_SPI_CLOCK
+make: *** [gecko_sdk_3.2.3/hardware/driver/memlcd/src/subdir.mk:23: gecko_sdk_3.2.3/hardware/driver/memlcd/src/sl_memlcd.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+15:13:43 Build Failed. 13 errors, 2 warnings. (took 1s.440ms)
+

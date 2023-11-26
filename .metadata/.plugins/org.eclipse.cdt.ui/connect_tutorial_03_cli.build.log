@@ -1,0 +1,20 @@
+21:39:30 **** Build of configuration GNU ARM v10.3.1 - Default for project connect_tutorial_03_cli ****
+make -j16 all 
+Building file: C:/Users/Wind/Downloads/flex-callbacks.c
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"flex-callbacks.d" -MT"flex-callbacks.o" -o "flex-callbacks.o" "C:/Users/Wind/Downloads/flex-callbacks.c"
+C:/Users/Wind/Downloads/flex-callbacks.c:9:10: error: #include expects "FILENAME" or <FILENAME>
+    9 | #include PLATFORM_HEADER
+      |          ^~~~~~~~~~~~~~~
+C:/Users/Wind/Downloads/flex-callbacks.c:10:10: error: #include expects "FILENAME" or <FILENAME>
+   10 | #include CONFIGURATION_HEADER
+      |          ^~~~~~~~~~~~~~~~~~~~
+C:/Users/Wind/Downloads/flex-callbacks.c:11:10: fatal error: stack/include/ember.h: No such file or directory
+   11 | #include "stack/include/ember.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [subdir.mk:20: flex-callbacks.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+21:39:30 Build Failed. 4 errors, 0 warnings. (took 197ms)
+

@@ -1,0 +1,56 @@
+13:55:26 **** Build of configuration GNU ARM v10.3.1 - Debug for project light_traffic ****
+make -j16 all 
+Building file: ../app.c
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g -gdwarf-2 -mcpu=cortex-m33 -mthumb -std=c99 '-DDEBUG=1' '-DDEBUG_EFM=1' '-DBGM220PC22HNA=1' '-DSL_COMPONENT_CATALOG_PRESENT=1' -I"E:\Project_BGM220\light_traffic\config" -I"E:\Project_BGM220\light_traffic\autogen" -I"E:\Project_BGM220\light_traffic" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/Device/SiliconLabs/BGM22/Include" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/common/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//hardware/board/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/CMSIS/Include" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/service/device_init/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/emlib/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/service/iostream/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/common/toolchain/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/service/system/inc" -I"C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2//platform/service/sleeptimer/inc" -Os -Wall -Wextra -mno-sched-prolog -fno-builtin -ffunction-sections -fdata-sections -imacrossl_gcc_preinclude.h -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c -fmessage-length=0 -MMD -MP -MF"app.d" -MT"app.o" -o "app.o" "../app.c"
+../app.c: In function 'app_process_action':
+../app.c:45:2: warning: implicit declaration of function 'sl_sleeptimer_delay_millisecond' [-Wimplicit-function-declaration]
+   45 |  sl_sleeptimer_delay_millisecond(10000);
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Finished building: ../app.c
+ 
+Building target: light_traffic.axf
+Invoking: GNU ARM C Linker
+arm-none-eabi-gcc -g -gdwarf-2 -mcpu=cortex-m33 -mthumb -T "E:\Project_BGM220\light_traffic\autogen\linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="light_traffic.map" -mfpu=fpv5-sp-d16 -mfloat-abi=hard --specs=nano.specs -o light_traffic.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./autogen/sl_iostream_handles.o" "./autogen/sl_iostream_init_usart_instances.o" "./gecko_sdk_3.2.3/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_3.2.3/hardware/board/src/sl_board_init.o" "./gecko_sdk_3.2.3/platform/Device/SiliconLabs/BGM22/Source/GCC/startup_bgm22.o" "./gecko_sdk_3.2.3/platform/Device/SiliconLabs/BGM22/Source/system_bgm22.o" "./gecko_sdk_3.2.3/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_3.2.3/platform/emlib/src/em_assert.o" "./gecko_sdk_3.2.3/platform/emlib/src/em_burtc.o" "./gecko_sdk_3.2.3/platform/emlib/src/em_cmu.o" "./gecko_sdk_3.2.3/platform/emlib/src/em_core.o" "./gecko_sdk_3.2.3/platform/emlib/src/em_emu.o" "./gecko_sdk_3.2.3/platform/emlib/src/em_gpio.o" "./gecko_sdk_3.2.3/platform/emlib/src/em_rtcc.o" "./gecko_sdk_3.2.3/platform/emlib/src/em_system.o" "./gecko_sdk_3.2.3/platform/emlib/src/em_usart.o" "./gecko_sdk_3.2.3/platform/service/device_init/src/sl_device_init_dcdc_s2.o" "./gecko_sdk_3.2.3/platform/service/device_init/src/sl_device_init_emu_s2.o" "./gecko_sdk_3.2.3/platform/service/device_init/src/sl_device_init_hfxo_s2.o" "./gecko_sdk_3.2.3/platform/service/device_init/src/sl_device_init_lfxo_s2.o" "./gecko_sdk_3.2.3/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_3.2.3/platform/service/iostream/src/sl_iostream.o" "./gecko_sdk_3.2.3/platform/service/iostream/src/sl_iostream_uart.o" "./gecko_sdk_3.2.3/platform/service/iostream/src/sl_iostream_usart.o" "./gecko_sdk_3.2.3/platform/service/sleeptimer/src/sl_sleeptimer.o" "./gecko_sdk_3.2.3/platform/service/sleeptimer/src/sl_sleeptimer_hal_burtc.o" "./gecko_sdk_3.2.3/platform/service/sleeptimer/src/sl_sleeptimer_hal_prortc.o" "./gecko_sdk_3.2.3/platform/service/sleeptimer/src/sl_sleeptimer_hal_rtcc.o" "./gecko_sdk_3.2.3/platform/service/system/src/sl_system_init.o" "./gecko_sdk_3.2.3/platform/service/system/src/sl_system_process_action.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
+Finished building target: light_traffic.axf
+ 
+Building out file: light_traffic.out
+arm-none-eabi-objcopy "light_traffic.axf" "light_traffic.out"
+ 
+Building hex file: light_traffic.hex
+arm-none-eabi-objcopy -O ihex "light_traffic.axf" "light_traffic.hex"
+ 
+Building bin file: light_traffic.bin
+arm-none-eabi-objcopy -O binary "light_traffic.axf" "light_traffic.bin"
+ 
+Building s37 file: light_traffic.s37
+arm-none-eabi-objcopy -O srec "light_traffic.axf" "light_traffic.s37"
+ 
+Running size tool
+arm-none-eabi-size "light_traffic.axf" -A
+light_traffic.axf  :
+section             size        addr
+.text              11936           0
+.ARM.exidx             8       11936
+.stack              4096   536870912
+.data                124   536875008
+.bss                 172   536875132
+.heap              28376   536875304
+.ARM.attributes       54           0
+.comment              73           0
+.debug_info       140094           0
+.debug_abbrev      15293           0
+.debug_loc         34635           0
+.debug_aranges      2544           0
+.debug_ranges       3600           0
+.debug_line        43837           0
+.debug_str         36886           0
+.debug_frame        6880           0
+.stabstr             333           0
+Total             328941
+
+
+ 
+
+13:55:29 Build Finished. 0 errors, 1 warnings. (took 2s.904ms)
+

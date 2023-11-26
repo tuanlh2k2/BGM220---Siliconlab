@@ -1,0 +1,115 @@
+/*
+ * st7735.h
+ *
+ *  Created on: Jul 30, 2023
+ *      Author: Wind
+ */
+
+#ifndef ST7735_H_
+#define ST7735_H_
+
+#include "sl_status.h"
+
+#include <stdbool.h>
+#include <stdint.h>
+#include "st7735_spi.h"
+//#include "my_font.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+/**
+ * General st7735 data structure.
+ */
+typedef struct st7735_t {
+	unsigned short width;       ///< Display pixel width
+	unsigned short height;      ///< Display pixel height
+} st7735_t;
+
+/* ==================================================================
+							DEFINE COLOR
+=====================================================================*/
+#define WHITE             0xFFFF
+#define BLACK             0x0000
+#define BLUE              0x001F
+#define RED               0xF800
+#define MAGENTA           0xF81F
+#define GREEN             0x07E0
+#define CYAN              0x7FFF
+#define YELLOW            0xFFE0
+#define BROWN 		  	  0XBC40
+#define GRAY  		  	  0X8430
+
+
+
+/**
+ * this function is used to send oled screen initialization commands.
+ * @return
+ */
+sl_status_t st7735_init(void);
+
+/**
+ * This function clears the screen.
+ */
+void st7735_clear(void);
+
+/**
+ * This function performs the setting of the display window.
+ * @param x is the coordinates of the starting point in the x axis
+ * @param y is the coordinate of the starting point along the y trục axis
+ * @param w is the width of the frame
+ * @param h is the length of the frame
+ */
+void st7735_set_window(uint8_t x, uint8_t y, uint8_t w, uint8_t h);
+
+/**
+ * This function writes data to a pixel.
+ * @param color
+ */
+void st7735_draw(uint16_t color);
+
+/**
+ * This function draws a pixel on the screen.
+ * @param x
+ * @param y
+ * @param color
+ */
+void st7735_draw_pixel(int16_t x,int16_t y,uint16_t color);
+
+/**
+ * This function draws a character on the screen
+ * @param coordinate_x
+ * @param coordinate_y
+ * @param data
+ * @param color
+ */
+void draw_character(int coordinate_x, int coordinate_y, char data, uint16_t text_color, uint16_t background_color);
+
+/**
+ * This function draws a string of characters to the screen.
+ * @param coordinate_x
+ * @param coordinate_y
+ * @param str
+ * @param color
+ */
+void draw_string(int coordinate_x, int coordinate_y, const char* str, uint16_t color);
+
+/**
+ * This is the main display of the program.
+ */
+void displays_init();
+
+
+char* convert_to_string(uint16_t x);
+
+char *update_value(uint16_t integer, uint8_t decimal);
+
+char *convert_light_intensity_to_string(uint8_t light_hight, uint8_t light_low);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* ST7735_H_ */

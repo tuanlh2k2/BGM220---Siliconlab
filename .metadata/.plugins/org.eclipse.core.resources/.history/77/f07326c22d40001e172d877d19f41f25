@@ -1,0 +1,51 @@
+/*
+ * app_cli.c
+ *
+ *  Created on: Aug 21, 2023
+ *      Author: Wind
+ */
+
+#include "app_cli.h"
+
+
+static const sl_cli_command_info_t cmd_run = \
+SL_CLI_COMMAND(cmd_run_handler,
+		"Set timer command",
+		"Argument1 - 0:stop, 1:run",
+		"Argument2 - 0:stop, 1:run"
+		{ SL_CLI_ARG_UINT8, SL_CLI_ARG_UINT8, SL_CLI_ARG_END, });
+
+static sl_cli_command_entry_t custom_cmd_table[] = {
+		{ "run", &cmd_run, false },
+		{ NULL, false },
+};
+
+static sl_cli_command_group_t custom_cmd_group = {
+		{ NULL },
+		false,
+		custom_cmd_table
+};
+
+/******************************************************************************
+ * CLI - run: Handler of the `custom run` command
+ *****************************************************************************/
+void cmd_run_handler(sl_cli_command_arg_t *arguments)
+{
+	int argc = sl_cli_get_argument_count(arguments);
+	printf("argc = %d\n", argc);
+	if (argc < 1) {
+		printf("Not enough arguments. Expected 1! \n");
+		return;
+	}
+
+	uint8_t enable = sl_cli_get_argument_uint8(arguments, 0);
+	uint8_t data = sl_cli_get_argument_uint8(arguments, 1);
+	//if (enable) {
+	printf("%d\n", data);
+}
+
+void cli_custom_cmd_init()
+{
+	sl_cli_command_add_command_group(sl_cli_example_handle, &custom_cmd_group);
+}
+

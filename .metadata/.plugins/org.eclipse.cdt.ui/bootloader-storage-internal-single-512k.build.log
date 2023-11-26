@@ -1,0 +1,19 @@
+21:07:50 **** Build of configuration GNU ARM v10.3.1 - Default for project bootloader-storage-internal-single-512k ****
+make -j16 all 
+make[1]: Nothing to be done for 'main-build'.
+sh "C:/Users/Wind/OneDrive/Desktop/test/bootloader-storage-internal-single-512k/bootloader-storage-internal-single-512k_postbuild.sh" "bootloader-storage-internal-single-512k" "C:/SiliconLabs/SimplicityStudio/v5/developer/sdks/gecko_sdk_suite/v3.2/"
+ 
+Add checksum to image (bootloader-storage-internal-single-512k-crc.s37)
+ 
+Parsing file bootloader-storage-internal-single-512k.s37...
+Appending CRC32 checksum...
+Found Application Properties at 0x00003250
+Writing Application Properties signature pointer to point to 0x000034a8
+Setting signature type in Application Properties: 0x00000002
+Writing to bootloader-storage-internal-single-512k-crc.s37...
+Overwriting file: bootloader-storage-internal-single-512k-crc.s37...
+DONE
+ 
+
+21:07:51 Build Finished. 0 errors, 0 warnings. (took 1s.635ms)
+

@@ -1,0 +1,6 @@
+15:13:43 **** Build of configuration GNU ARM v10.3.1 - Debug for project blink_led_with_button ****
+make -j16 all 
+make: Nothing to be done for 'all'.
+
+15:13:44 Build Finished. 0 errors, 0 warnings. (took 669ms)
+
